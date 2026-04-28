@@ -21,6 +21,14 @@ Esta aplicación permite a los usuarios:
 
 El sistema implementa **autenticación basada en JWT**, garantizando que cada usuario solo pueda acceder y modificar sus propios datos de forma segura.
 
+## 🌍 Demo en Vivo
+
+- **Frontend (Vercel):**  
+  https://fullstack-productos.vercel.app/
+
+- **Backend (Render):**  
+  https://fullstack-productos-backend.onrender.com
+
 ## 🛠️ Tecnologías Utilizadas
 
 ### Backend
