@@ -1,8 +1,10 @@
+import API_URL from '../api';
+
 export default function Register() {
   const submit = async (e) => {
     e.preventDefault();
 
-    await fetch('/auth/register', {
+    await fetch(`${API_URL}/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

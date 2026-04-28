@@ -1,8 +1,10 @@
+import API_URL from '../api';
+
 export default function Login() {
   const submit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch('/auth/login', {
+    const res = await fetch(`${API_URL}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

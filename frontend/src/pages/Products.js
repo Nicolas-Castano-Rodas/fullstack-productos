@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import API_URL from '../api';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -10,7 +11,7 @@ export default function Products() {
       return;
     }
 
-    fetch('/products', {
+    fetch(`${API_URL}/products`, {
       headers: { Authorization: token }
     })
       .then(res => res.json())
@@ -18,7 +19,7 @@ export default function Products() {
   }, [token]);
 
   const reload = async () => {
-    const res = await fetch('/products', {
+    const res = await fetch(`${API_URL}/products`, {
       headers: { Authorization: token }
     });
     setProducts(await res.json());
@@ -27,7 +28,7 @@ export default function Products() {
   const createProduct = async (e) => {
     e.preventDefault();
 
-    await fetch('/products', {
+    await fetch(`${API_URL}/products`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +45,7 @@ export default function Products() {
   };
 
   const deleteProduct = async (id) => {
-    await fetch(`/products/${id}`, {
+    await fetch(`${API_URL}/products/${id}`, {
       method: 'DELETE',
       headers: { Authorization: token }
     });
